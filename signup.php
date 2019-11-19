@@ -11,10 +11,12 @@ if(!empty($_POST)){
 	extract($_POST);
 	$valid = true;
 
-	$Email = htmlspecialchars(trim($Email));
-	$Pseudo = htmlspecialchars(ucfirst(trim($Pseudo)));
-	$Password = trim($Password);
-	$PasswordConfirmation = trim($PasswordConfirmation);
+	$Email = htmlspecialchars(trim($_POST['email']));
+	$Pseudo = htmlspecialchars(ucfirst(trim($_POST['pseudo'])));
+	$Password = trim($_POST['password']);
+	$PasswordConfirmation = trim($_POST['PasswordConfirmation']);
+	
+var_dump($Email, $Pseudo, $Password);
 
 	if(empty($Pseudo)){
 		$valid = false;
@@ -71,6 +73,7 @@ if(!empty($_POST)){
 	}
 }
 require('inc/head.php');
+
 ?>
 
 <!-- SignUp [ Section 0.2 ]-->
