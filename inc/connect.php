@@ -4,7 +4,7 @@ class connectdb {
     private $host ='localhost';
     private $name='RoadtripTogether';
     private $user='root';
-    private $pass='root';
+    private $pass=''; /* Moi je n'ai pas de mot de passe toi c'était root */
     private $connexion;
 
     function __construct($host=null,$name=null,$user=null,$pass=null){
