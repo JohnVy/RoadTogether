@@ -40,13 +40,12 @@ if (!empty($_POST)){
 
     elseif($password == $passwordConfirmation){
 
-        // cryptage mdp à faire
         
         $sql = $conn->prepare("INSERT INTO users (pseudo_user, email_user, password_user) VALUES (:pseudo, :email, :password)");
         $sql->execute(array(
             "pseudo" => $pseudo,
             "email" => $email,
-            "password" => password_hash($password, PASSWORD_DEFAULT),
+            "password" => password_hash($password, PASSWORD_DEFAULT)
         ));
         echo "Inscription réussie";
     }

@@ -28,8 +28,6 @@ if(!empty($_POST)){
     $row = $sql->fetch(PDO::FETCH_ASSOC);
     if($sql->rowCount() > 0){
         if(password_verify($password, $row['password_user'])){
-            $test = password_verify($password, $row['password_user']);
-            var_dump($test);
             header('Location: home.php');
         }
     }
