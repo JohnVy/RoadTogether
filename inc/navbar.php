@@ -1,5 +1,3 @@
-<!-- Navbar Header - [ Section 0 ] -->
-<!------------------------------------->
 <nav class="navbar navbar-expand-lg navbar-dark road_navbar bg-dark road-navbar-light" id="road-navbar">
     <div class="container">
         <a class="navbar-brand" href="index.php">RoadTrip<br>Together</a>
