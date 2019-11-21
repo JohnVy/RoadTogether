@@ -1,7 +1,3 @@
-<!-- HEADER -->
-<!------------------------------------->
-<!-- Welcom [ Section 0 ] -->
-<!------------------------------------->
 <div class="block-slide" style="position: relative;">
     <div class="owl-carousel loop-block-slide ">
       <div class="block-back item" style="background-image: url('img/bg_1.jpg');" data-stellar-background-ratio="0.5">

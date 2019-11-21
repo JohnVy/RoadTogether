@@ -1,39 +1,16 @@
-
 <?php
-class connectdb {
-    private $host ='localhost';
-    private $name='RoadtripTogether';
-    private $user='root';
-    private $pass=''; /* Moi je n'ai pas de mot de passe toi c'était root */
-    private $connexion;
+$servername = "localhost"; 
+$dbname = "roadtriptogether";
+$username = "root"; 
+$password = "";
 
-    function __construct($host=null,$name=null,$user=null,$pass=null){
-	if($host != null){
-            $this->host = $host;
-            $this->name = $name;
-            $this->user = $user;
-            $this->pass = $pass;
-	}
-	try{
-            $this->connexion = new PDO('mysql:host='.$this->host.';dbname='.$this->name,
-            $this->user,$this->pass,array(
-		PDO::MYSQL_ATTR_INIT_COMMAND =>'SET NAMES UTF8',
-		PDO::ATTR_ERRMODE => PDO::ERRMODE_WARNING
-		));
-	}catch (PDOException $e){
-            echo 'Erreur : Impossible de se connecter  à la BDD !';die();
-	}
-    }
+try {
+    $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
 
-    public function query($sql , $data=array()){
-	$req = $this->connexion->prepare($sql);
-	$req->execute($data);
-        return $req;
-    }
-
-    public function insert($sql, $data=array()) {
-        $req=$this->connexion->prepare($sql);
-        $req->execute($data);
-    }
+    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+} 
+catch(PDOException $e) {
+    echo "Connection failed: " . $e->getMessage();
 }
+
 ?>

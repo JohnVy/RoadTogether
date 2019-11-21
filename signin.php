@@ -1,66 +1,43 @@
 <?php
 session_start();
-include_once('inc/include.php');
-
-if(isset($_SESSION['pseudo'])){
-	header('Location: home.php');
-	exit;
-}
+require('inc/connect.php');
+include('inc/head.php');
 
 if(!empty($_POST)){
-	extract($_POST);
-	$valid = true;
-	
-	$Email = htmlspecialchars(trim($Email));
-	$Password = trim($Password);
-		
-	if(empty($Email)){
-		$valid = false;
-		$_SESSION['flash']['danger'] = "Veuillez renseigner votre adresse email !";
-	}
-	
-	if(empty($Password)){
-		$valid = false;
-		$error_password = "Veuillez renseigner votre mot de passe !";
-	}
-	
-	
-	$req = $DB->query('Select * from user where email = :email and password = :password', array('email' => $Email, 'password' => crypt($Password, '$2a$10$1qAz2wSx3eDc4rFv5tGb5t')));
-	$req = $req->fetch();
-	var_dump($Email);
-		
-	if(!$req['email']){
-		$valid = false;
-		$_SESSION['flash']['danger'] = "Votre adresse email ou votre mot de passe ne correspondent pas";
-	}
-	
-	
-	if($valid){
-		
-		$_SESSION['id'] = $req['id_user'];
-		$_SESSION['pseudo'] = $req['pseudo'];
-		$_SESSION['email'] = $req['email'];
-		$_SESSION['password'] = $req['password'];
-		
-		$_SESSION['flash']['info'] = "Bonjour" . $_SESSION['pseudo'];
-		header('Location: home.php');
-		exit;
-		var_dump ('email');
-			
-	}
-	
+    $valid = true;
+
+    $email = htmlspecialchars(trim($_POST['email']));
+    $password = trim($_POST['password']);
+    
+    if(empty($email)){
+        $valid = false;
+        echo "email vide";
+    }
+    if(!preg_match("#^[a-z0-9._-]+@[a-z0-9._-]{2,}\.[a-z]{2,4}$#", $email)){
+        $valid = false;
+        echo "Email non conforme";
+    }
+
+    if(empty($password)){
+        $valid = false;
+        echo "Mot de passe vide";
+    }
+
+    $sql = $conn->prepare("SELECT * from users WHERE email_user = :email");
+    $sql->execute(array('email' => $email));
+    $row = $sql->fetch(PDO::FETCH_ASSOC);
+    if($sql->rowCount() > 0){
+        if(password_verify($password, $row['password_user'])){
+            $test = password_verify($password, $row['password_user']);
+            var_dump($test);
+            header('Location: home.php');
+        }
+    }
 }
-require('inc/head.php');
 ?>
 
 
-<!------------------------------------->
-<!-- SignIn [ Section 0.1 ]-->
-<!-------------------------------------------------------------------------->
 
-
-<!-- Title - [ Section 0.1 ] -->
-<!------------------------------------->
 <div class="container">
     <div class="row site-section">
         <div class="col-md-12">
