@@ -2,11 +2,10 @@
 session_start();
 require('inc/connect.php');
 include('inc/head.php');
+include('inc/header.php');
 
 if (!empty($_POST)){
-
     $valid = true;
-
     $email = htmlspecialchars(trim($_POST['email']));
     $pseudo = htmlspecialchars(ucfirst(trim($_POST['pseudo'])));
     $password = trim($_POST['password']);
@@ -55,13 +54,13 @@ if (!empty($_POST)){
 
 
 
-<div class="container">
+<div id="block-signup" class="container">
     <div class="row site-section">
         <div class="col-md-6">
           <div class="row mb-5">
             <div class="col-md-7 section-heading">
               <span class="subheading-sm">Bienvenue</span>
-              <h2 class="heading">On attend plus que vous !</h2>
+              <h2 class="heading white">On attend plus que vous !</h2>
                 <?php
 		            // if(isset($_SESSION['flash'])){
                     //     foreach($_SESSION['flash'] as $type => $message): 
@@ -79,8 +78,7 @@ if (!empty($_POST)){
           </div>
         </div>
 
-
-        <div class="col-md-4 col-lg-4">
+        <div class="col-md-4 col-lg-4 block-sign">
             <form method="post" action="signup.php">
                 <div class="form-group">
                     <label for="inputPseudo">Pseudo</label>
@@ -119,8 +117,8 @@ if (!empty($_POST)){
                 <br>
                 <button type="submit" name="submit-signup" class="btn btn-primary">Inscription</button>
             </form>
-
         </div>
-    
     </div>
 </div>
+
+<?php include('inc/footer-scripts.php'); ?>

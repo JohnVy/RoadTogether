@@ -10,5 +10,6 @@
     include('inc/search.php');
     include('inc/homeContent.php');
     require('inc/footer.php');
+    require('inc/footer-scripts.php');
 
     ?>

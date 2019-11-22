@@ -2,6 +2,7 @@
 session_start();
 require('inc/connect.php');
 include('inc/head.php');
+include('inc/header.php');
 
 if(!empty($_POST)){
     $valid = true;
@@ -36,13 +37,13 @@ if(!empty($_POST)){
 
 
 
-<div class="container">
+<div id="block-signin" class="container">
     <div class="row site-section">
-        <div class="col-md-12">
+        <div class="col-md-6">
           <div class="row mb-5">
             <div class="col-md-7 section-heading">
               <span class="subheading-sm">Bonjour</span>
-              <h2 class="heading">Connectez-vous !</h2>
+              <h2 class="heading white">Connectez-vous !</h2>
                 <?php 
 		            if(isset($_SESSION['flash'])){ 
 		                foreach($_SESSION['flash'] as $type => $message): ?>
@@ -59,8 +60,8 @@ if(!empty($_POST)){
           </div>
         </div>
 
-        <div class="col-md-4 col-lg-4">
-            <form method="post" action="">
+        <div class="col-md-4 col-lg-4 block-sign">
+            <form method="post" action="signin.php">
                 <div class="form-group">
                     <label for="inputEmail">Adresse email</label>
                     <input type="text" name="email" class="form-control" id="inputEmail" placeholder="Votre adresse email"
@@ -83,3 +84,11 @@ if(!empty($_POST)){
 
     </div>
 </div>
+
+
+
+
+
+
+
+<?php include('inc/footer-scripts.php'); ?>
