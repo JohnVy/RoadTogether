@@ -47,7 +47,7 @@ if (!empty($_POST)){
             "email" => $email,
             "password" => password_hash($password, PASSWORD_DEFAULT)
         ));
-        echo "Inscription réussie";
+        header('Location: signin.php');
     }
 }
 ?>

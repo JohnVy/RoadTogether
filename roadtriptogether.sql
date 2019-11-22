@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.9.1
+-- version 4.9.0.1
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le :  jeu. 21 nov. 2019 à 17:43
--- Version du serveur :  10.4.8-MariaDB
--- Version de PHP :  7.3.11
+-- Généré le :  ven. 22 nov. 2019 à 01:52
+-- Version du serveur :  10.4.6-MariaDB
+-- Version de PHP :  7.3.9
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -224,6 +224,7 @@ INSERT INTO `reservations` (`id`, `id_user`, `nbr_places`, `id_annonce`, `qr_cod
 
 CREATE TABLE `users` (
   `id` int(11) NOT NULL,
+  `pseudo_user` text NOT NULL,
   `firstname_user` text NOT NULL,
   `lastname_user` text NOT NULL,
   `email_user` varchar(255) NOT NULL,
@@ -237,8 +238,12 @@ CREATE TABLE `users` (
 -- Déchargement des données de la table `users`
 --
 
-INSERT INTO `users` (`id`, `firstname_user`, `lastname_user`, `email_user`, `password_user`, `image_user`, `adress_user`, `number_articles_user`) VALUES
-(37, '', '', 'ccc@ccc.fr', 'lFgwMCns4nl7g', '', '', 12);
+INSERT INTO `users` (`id`, `pseudo_user`, `firstname_user`, `lastname_user`, `email_user`, `password_user`, `image_user`, `adress_user`, `number_articles_user`) VALUES
+(37, '', '', '', 'ccc@ccc.fr', 'lFgwMCns4nl7g', '', '', 12),
+(38, 'Toto', '', '', 'toto@toto.fr', 'toto', '', '', 0),
+(39, 'Toto', '', '', 'toto@toto.fr', 'toto', '', '', 0),
+(40, 'Toto2', '', '', 'toto2@toto.fr', '$2y$10$jRPX00SOq5JWQG3kucUn4uPDFI1wf2NCjbwFIrGxHRlvQKIdbCg4e', '', '', 0),
+(41, 'Toto2', '', '', 'toto2@toto.fr', '$2y$10$7nknbYaeT0c1CDaxc9Sx2uz77DeqknxF17zej.BVEj1CZ80ketEy.', '', '', 0);
 
 --
 -- Index pour les tables déchargées
@@ -294,7 +299,7 @@ ALTER TABLE `reservations`
 -- AUTO_INCREMENT pour la table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=38;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=42;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
