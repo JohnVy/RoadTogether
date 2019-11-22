@@ -78,7 +78,15 @@ if(!empty($_POST)){
                 </div>
                 <br>
                 <br>
-                <button type="submit" name="submit-signin" class="btn btn-primary">Connexion</button>
+                <div class="row">
+                    <div class="col-6">
+                    <button type="submit" name="submit-signin" class="btn btn-primary">Connexion</button>
+                    </div>
+                    <div class="col-6">
+                        <p><a href="signup.php" style="height: 100%;">Pas encore inscrit ?</a></p>
+                    </div>
+                </div>
+                
             </form>
         </div>
 

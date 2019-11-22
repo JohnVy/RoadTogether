@@ -115,7 +115,15 @@ if (!empty($_POST)){
                     <input type="password" name="PasswordConfirmation" class="form-control" id="InputPasswordConfirm" placeholder="Votre mot de passe">
                 </div>
                 <br>
-                <button type="submit" name="submit-signup" class="btn btn-primary">Inscription</button>
+                <div class="row">
+                    <div class="col-6">
+                        <button type="submit" name="submit-signup" class="btn btn-primary">Inscription</button>
+                    </div>
+                    <div class="col-6">
+                        <p><a href="signin.php" style="height: 100%;">Déjà inscrit ?</a></p>
+                    </div>
+                </div>
+                <!-- <button type="submit" name="submit-signin" class="btn-connexion btn btn-primary">Connexion</button> -->
             </form>
         </div>
     </div>

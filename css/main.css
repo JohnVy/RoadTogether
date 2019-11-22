@@ -465,7 +465,9 @@ a:focus {
 .road-navbar-light.scrolled .navbar-brand {
     color: #000; }
 
-
+.btn-connexion {
+    float: right;
+}
 
 
 /*-----------------------------------------------*/
@@ -474,7 +476,6 @@ a:focus {
 
 .block-slide {
     position: relative;
-    z-index: 999;
 }
 /* Nav Icon */
 /*------------*/
