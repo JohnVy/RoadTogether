@@ -38,8 +38,37 @@
                             </div>
                         </div>
 
+                        <div class="col-md-6 mb-3 mb-lg-0 col-lg-3">
+                            <div class="row">
+                                <div class="col-md-6 mb-3 mb-md-0">
+                                    <label for="checkin">Nbr</label>
+                                    <div class="field-icon-wrap">
+                                        <div class="icon">
+                                            <span class="fas fa-angle-down"></span>
+                                        </div>
+                                        <select name="" id="" class="form-control">
+                                            <option value="">1</option>
+                                            <option value="">2</option>
+                                            <option value="">3</option>
+                                            <option value="">4+</option>
+                                        </select>
+                                    </div>
+                                </div>
 
-                    </div>
+                                <div class="col-md-6 mb-3 mb-md-0">
+                                    <label for="checkin">Prix</label>
+                                    <div class="field-icon-wrap">
+                                        <div class="icon">
+                                            <span class="fas fa-euro-sign"></span>
+                                        </div>
+                                        <input type="text" id="checkin_price" class="form-control">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div> 
                 <!-- row 2 -->
                     <div class="row">
 

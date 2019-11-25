@@ -4,8 +4,6 @@
         session_destroy();
         header('Location: index.php');
     }
-    var_dump($_SESSION);
-    var_dump($_GET);
     require('inc/connect.php');
 
 

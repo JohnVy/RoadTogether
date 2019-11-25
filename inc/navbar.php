@@ -28,7 +28,7 @@
           ?>
 
           <li class="nav-item active">
-              <a href="#" class="nav-link">Acceuil</a>
+              <a href="#" class="nav-link">Accueil</a>
           </li>
 
           <li class="nav-item">
