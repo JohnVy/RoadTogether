@@ -175,10 +175,34 @@ a:focus {
 /* Weight */
 /*-----------*/
 .site-section {
-    padding: 6em 0; }
+    padding: 6em 0; 
+}
     
 /* Style - Background */
 /*-----------*/
+#block-signup {
+    position: absolute;
+    top: 0;
+    left: 5vw;
+    z-index: 9999;
+}
+
+.block-sign {
+
+    z-index: 1;
+    position: relative;
+    background: #fff;
+    padding: 30px;
+    -webkit-box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.1);
+}
+#block-signin {
+    position: absolute;
+    top: 0;
+    left: 5vw;
+    z-index: 9999;
+}
+
 .block-back {
     background-size: cover;
     background-color: #ccc;
@@ -446,13 +470,18 @@ a:focus {
 .road-navbar-light.scrolled .navbar-brand {
     color: #000; }
 
-
+.btn-connexion {
+    float: right;
+}
 
 
 /*-----------------------------------------------*/
 /* SLIDE */
 /*-----------------------------------------------*/
 
+.block-slide {
+    position: relative;
+}
 /* Nav Icon */
 /*------------*/
 /* Arrow */
@@ -710,6 +739,9 @@ a:focus {
     color:#10cd83;
 }
 
+.white {
+    color: white;
+}
 
 /* Title */
 .block-post .text .heading, .block-postb .text .heading {

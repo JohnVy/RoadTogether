@@ -4,8 +4,8 @@
         <div class="container">
           <div class="row align-items-center">
             <div class="col-md-10">
-              <span class="subheading-sm">Bienvenue.</span>
-              <h2 class="heading">Viens vivre <br> une expérience unique !</h2>
+              <!-- <span class="subheading-sm">Bienvenue.</span>
+              <h2 class="heading">Viens vivre <br> une expérience unique !</h2> -->
             </div>
           </div>
         </div>
@@ -14,8 +14,8 @@
         <div class="container">
           <div class="row align-items-center">
             <div class="col-md-10">
-              <span class="subheading-sm">Bienvenue.</span>
-              <h2 class="heading">Faire des rencontres <br> &amp; voir de nouveaux horizons.</h2>
+              <!-- <span class="subheading-sm">Bienvenue.</span>
+              <h2 class="heading">Faire des rencontres <br> &amp; voir de nouveaux horizons.</h2> -->
             </div>
           </div>
         </div>
@@ -24,8 +24,8 @@
         <div class="container">
           <div class="row align-items-center">
             <div class="col-md-10">
-              <span class="subheading-sm">Bienvenue.</span>
-              <h2 class="heading">Poste une annonce <br> &amp; pars à l'aventure !</h2>
+              <!-- <span class="subheading-sm">Bienvenue.</span>
+              <h2 class="heading">Poste une annonce <br> &amp; pars à l'aventure !</h2> -->
             </div>
           </div>
         </div>

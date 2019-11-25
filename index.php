@@ -1,23 +1,15 @@
 <?php
-    session_start();
-    include_once('inc/include.php');
+    // session_start();
 
-    if(isset($_SESSION['pseudo'])){
-        header('Location: home.php');
-        exit;
-    }
+    require('inc/connect.php');
 
-    if(!empty($_POST)){
-        extract($_POST);
-        $valid = true;
-        if($valid){
 
-        }
-    }
-?>
-<?php require('inc/head.php');?>
-<?php include('inc/header.php');?>
-<?php include('inc/navbar.php');?>
-<?php include('inc/search.php');?>
-<?php include('inc/content.php');?>
-<?php require('inc/footer.php');?>
+    include('inc/head.php');
+    include('inc/header.php');
+    include('inc/navbar.php');
+    include('inc/search.php');
+    include('inc/content.php');
+    require('inc/footer.php');
+    require('inc/footer-scripts.php');
+
+    ?>

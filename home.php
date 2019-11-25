@@ -1,15 +1,21 @@
 <?php
-session_start();
-include_once('inc/include.php');
-	echo $_SESSION['id'];
-?>
-<?php
-    $page = "home";
+    session_start();
+    if (isset($_GET['logout'])) {
+        session_destroy();
+        header('Location: index.php');
+    }
+    var_dump($_SESSION);
+    var_dump($_GET);
     require('inc/connect.php');
-?>
-<?php require('inc/head.php');?>
-<?php include('inc/header.php');?>
-<?php include('inc/navbar.php');?>
-<?php include('inc/search.php');?>
-<?php include('inc/content.php');?>
-<?php require('inc/footer.php');?>
+
+
+    include('inc/head.php');
+    include('inc/header.php');
+    include('inc/navbar.php');
+    include('inc/search.php');
+    include('inc/homeContent.php');
+    include('inc/footer.php');
+    require('inc/footer-scripts.php');
+
+
+    ?>
