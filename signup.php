@@ -56,76 +56,65 @@ if (!empty($_POST)){
 
 <div id="block-signup" class="container">
     <div class="row site-section">
-        <div class="col-md-6">
-          <div class="row mb-5">
-            <div class="col-md-7 section-heading">
-              <span class="subheading-sm">Bienvenue</span>
-              <h2 class="heading white">On attend plus que vous !</h2>
-                <?php
-		            // if(isset($_SESSION['flash'])){
-                    //     foreach($_SESSION['flash'] as $type => $message): 
-                    ?>
-				        <div id="alert" class="alert alert-<?= $type; ?> infoMessage"><a class="close"></a>
-                  
-				        </div>
-
-			        <?php
-			            // endforeach;
-			            // unset($_SESSION['flash']);
-			        // }
-                ?>
+            <div class="col-md-6">
+            <div class="row mb-5">
+                <div class="col-md-7 section-heading">
+                <span class="subheading-sm">Bienvenue</span>
+                <h2 class="heading white">On attend plus que vous !</h2>
+                
+                </div>
             </div>
-          </div>
-        </div>
+            </div>
 
-        <div class="col-md-4 col-lg-4 block-sign">
-            <form method="post" action="signup.php">
-                <div class="form-group">
-                    <label for="inputPseudo">Pseudo</label>
-                    <?php
-						if(isset($error_pseudo)){
-							echo $error_pseudo."<br/>";
-						}
-					?>
-                    <input type="text" name="pseudo" class="form-control" id="inputPseudo" placeholder="Votre pseudo"
-                    value="<?php if (isset($pseudo)) echo $pseudo; ?>" maxlength="20" required="required">
-                </div>
-                <div class="form-group">
-                    <label for="inputEmail">Adresse email</label>
-                    <input type="text" name="email" class="form-control" id="inputEmail" placeholder="Votre adresse email"
-                    value="<?php if (isset($email)) echo $email; ?>" required="required">
-                </div>
-                <div class="form-group">
-                    <label for="inputPassword">Mot de passe</label>
-                    <?php
-						if(isset($error_password)){
-							echo $error_password."<br/>";
-						}
-					?>
-                    <input type="password" name="password" class="form-control" id="inputPassword" placeholder="Votre mot de passe"
-                    value="<?php if (isset($password)) echo $password; ?>" required="required">
-                </div>
-                <div class="form-group">
-                    <label for="InputPasswordConfirm">Confirmez votre mot de passe</label>
-                    <?php
-						if(isset($error_passwordConf)){
-							echo $error_passwordConf."<br/>";
-						}
-					?>
-                    <input type="password" name="PasswordConfirmation" class="form-control" id="InputPasswordConfirm" placeholder="Votre mot de passe">
-                </div>
-                <br>
-                <div class="row">
-                    <div class="col-6">
-                        <button type="submit" name="submit-signup" class="btn btn-primary">Inscription</button>
+            <div class="col-md-4 col-lg-4 block-sign">
+                <form method="post" action="signup.php">
+                    <div class="form-group">
+                        <label for="inputPseudo">Pseudo</label>
+                        <?php
+                            if(isset($error_pseudo)){
+                                echo $error_pseudo."<br/>";
+                            }
+                        ?>
+                        <input type="text" name="pseudo" class="form-control" id="inputPseudo" placeholder="Votre pseudo"
+                        value="<?php if (isset($pseudo)) echo $pseudo; ?>" maxlength="20" required="required">
                     </div>
-                    <div class="col-6">
-                        <p><a href="signin.php" style="height: 100%;">Déjà inscrit ?</a></p>
+                    <div class="form-group">
+                        <label for="inputEmail">Adresse email</label>
+                        <input type="text" name="email" class="form-control" id="inputEmail" placeholder="Votre adresse email"
+                        value="<?php if (isset($email)) echo $email; ?>" required="required">
                     </div>
-                </div>
-                <!-- <button type="submit" name="submit-signin" class="btn-connexion btn btn-primary">Connexion</button> -->
-            </form>
-        </div>
+                    <div class="form-group">
+                        <label for="inputPassword">Mot de passe</label>
+                        <?php
+                            if(isset($error_password)){
+                                echo $error_password."<br/>";
+                            }
+                        ?>
+                        <input type="password" name="password" class="form-control" id="inputPassword" placeholder="Votre mot de passe"
+                        value="<?php if (isset($password)) echo $password; ?>" required="required">
+                    </div>
+                    <div class="form-group">
+                        <label for="InputPasswordConfirm">Confirmez votre mot de passe</label>
+                        <?php
+                            if(isset($error_passwordConf)){
+                                echo $error_passwordConf."<br/>";
+                            }
+                        ?>
+                        <input type="password" name="PasswordConfirmation" class="form-control" id="InputPasswordConfirm" placeholder="Votre mot de passe">
+                    </div>
+                    <br>
+                    <div class="row">
+                        <div class="col-6">
+                            <button type="submit" name="submit-signup" class="btn btn-primary">Inscription</button>
+                        </div>
+                        <div class="col-6">
+                            <p><a href="signin.php" style="height: 100%;">Déjà inscrit ?</a></p>
+                        </div>
+                    </div>
+                    <!-- <button type="submit" name="submit-signin" class="btn-connexion btn btn-primary">Connexion</button> -->
+                </form>
+            </div>
+        <!-- </div> -->
     </div>
 </div>
 
