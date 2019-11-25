@@ -9,9 +9,12 @@
         <ul class="navbar-nav ml-auto">
 
           <?php
-          if( isset($_SESSION['id']) ){
+          if( isset($_SESSION['login']) ){
           ?>
 
+        <li class="nav-item">
+              <a href="blog.php" class="nav-link">Blog</a>
+          </li>
           <li class="nav-item active">
               <a href="profil.php" class="nav-link">Mon compte</a>
           </li>
@@ -25,7 +28,7 @@
           ?>
 
           <li class="nav-item active">
-              <a href="home.php" class="nav-link">Devenir membre</a>
+              <a href="#" class="nav-link">Acceuil</a>
           </li>
 
           <li class="nav-item">

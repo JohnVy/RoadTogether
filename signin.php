@@ -29,6 +29,10 @@ if(!empty($_POST)){
     $row = $sql->fetch(PDO::FETCH_ASSOC);
     if($sql->rowCount() > 0){
         if(password_verify($password, $row['password_user'])){
+
+            $_SESSION['login'] = true;
+            $_SESSION['email'] = $email;
+
             header('Location: home.php');
         }
     }
@@ -65,7 +69,7 @@ if(!empty($_POST)){
                 <div class="form-group">
                     <label for="inputEmail">Adresse email</label>
                     <input type="text" name="email" class="form-control" id="inputEmail" placeholder="Votre adresse email"
-                    value="<?php if (isset($Email)) echo $Email; ?>" required="required">
+                    value="<?php if (isset($email)) echo $email; ?>" required="required">
                 </div>
                 <div class="form-group">
                     <label for="inputPassword">Mot de passe</label>
