@@ -1,94 +1,159 @@
-<div class="block-back block-back-sm item" style="background-image: url('images/bg_2.jpg');" data-stellar-background-ratio="0.5">
-    <div class="container">
-        <div class="row align-items-center">
-            <div class="col-md-2">
-                <div class="vcard d-flex mb-6">
-                    <div class="image align-self-center"><img src="img/person_6.jpg" alt="Person here"></div>
-                </div>
-            </div>
-            <div class="col-md-6">
-                <span class="subheading-sm">Profil</span>
-                <h2 class="heading">Margot S.</h2>
+<div class="row site-section">
+    <div class="col-md-12">
+        <div class="row mb-5">
+            <div class="col-md-7 section-heading">
+                <span class="subheading-sm">Classe</span>
+                <h2 class="heading">Curieuse.</h2>
             </div>
         </div>
     </div>
 </div>
 
-
-<div class="container">
-    <div class="row mb-5">
-        <div class="col-md-12">
-            <div class="block-search">
-                <form action="post">
-                <!-- row 1 -->
-                    <div class="row">
-                        <div class="col-md-6 mb-3 mb-lg-0 col-lg-3">
-                            <label for="checkin">Du</label>
-                            <div class="field-icon-wrap">
-                                <div class="icon"><span class="far fa-calendar"></span></div>
-                                <input type="text" id="checkin_date" class="form-control">
-                            </div>
+<div class="site-section bg-light">
+    <div class="container">
+        
+        <div class="row mb-5">
+            <div class="col-md-7 section-heading">
+                <span class="subheading-sm">Vos expériences</span>
+                <h2 class="heading">Des souvenirs.</h2>
+            </div>
+        </div>
+    
+        <div class="row">
+        
+            <div class="col-md-4 col-sm-1">
+                <div class="block-user">
+                    <div class="vcard d-flex mb-3">
+                        
+                        <div class="image align-self-center">
+                            <img src="img/person_3.jpg" alt="Person here">
                         </div>
-
-                        <div class="col-md-6 mb-3 mb-lg-0 col-lg-3">
-                            <label for="checkin">Au</label>
-                            <div class="field-icon-wrap">
-                                <div class="icon"><span class="far fa-calendar"></span></div>
-                                <input type="text" id="checkout_date" class="form-control">
-                            </div>
+                        
+                        <div class="name-text align-self-center">
+                            <h2 class="heading">Martin Bzh</h2>
+                            <span class="meta">Baroudeur</span>
                         </div>
-
-                        <div class="col-md-6 mb-3 mb-lg-0 col-lg-3">
-                            <div class="row">
-                                <div class="col-md-6 mb-3 mb-md-0">
-                                    <label for="checkin">Nbr</label>
-                                    <div class="field-icon-wrap">
-                                        <div class="icon">
-                                            <span class="fas fa-angle-down"></span>
-                                        </div>
-                                        <select name="" id="" class="form-control">
-                                            <option value="">1</option>
-                                            <option value="">2</option>
-                                            <option value="">3</option>
-                                            <option value="">4+</option>
-                                        </select>
-                                    </div>
-                                </div>
-
-                                <div class="col-md-6 mb-3 mb-md-0">
-                                    <label for="checkin">Prix</label>
-                                    <div class="field-icon-wrap">
-                                        <div class="icon">
-                                            <span class="fas fa-euro-sign"></span>
-                                        </div>
-                                        <input type="text" id="checkin_price" class="form-control">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-
-                    </div> 
-                <!-- row 2 -->
-                    <div class="row">
-
-
-
-
-
 
                     </div>
-                <!-- row 3 -->
-                    <div class="row">
-
-
-
-
-
-
+                    <div class="text">
+                        <blockquote>
+                        <p>&rdquo; Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga aliquid. Atque dolore esse veritatis iusto eaque perferendis non dolorem fugiat voluptatibus vitae error ad itaque inventore accusantium tempore dolores sunt. &ldquo;</p>
+                        </blockquote>
+                    </div>
+                </div>
+            </div>
+        
+            <div class="col-md-4 col-sm-1">
+                <div class="block-user">
+                    <div class="vcard d-flex mb-3">
+                        
+                        <div class="image align-self-center">
+                            <img src="img/person_2.jpg" alt="Person here">
+                        </div>
+                        
+                        <div class="name-text align-self-center">
+                            <h2 class="heading">Sophie L</h2>
+                            <span class="meta">Baroudeur</span>
+                        </div>
 
                     </div>
-                </form>
+                    <div class="text">
+                        <blockquote>
+                        <p>&rdquo; Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga aliquid. Atque dolore esse veritatis iusto eaque perferendis non dolorem fugiat voluptatibus vitae error ad itaque inventore accusantium tempore dolores sunt. &ldquo;</p>
+                        </blockquote>
+                    </div>
+                </div>
+            </div>
+        
+            <div class="col-md-4 col-sm-1">
+                <div class="block-user">
+                    <div class="vcard d-flex mb-3">
+                        
+                        <div class="image align-self-center">
+                            <img src="img/person_1.jpg" alt="Person here">
+                        </div>
+                        
+                        <div class="name-text align-self-center">
+                            <h2 class="heading">Antoine Atole</h2>
+                            <span class="meta">Baroudeur</span>
+                        </div>
+
+                    </div>
+                    <div class="text">
+                        <blockquote>
+                        <p>&rdquo; Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga aliquid. Atque dolore esse veritatis iusto eaque perferendis non dolorem fugiat voluptatibus vitae error ad itaque inventore accusantium tempore dolores sunt. &ldquo;</p>
+                        </blockquote>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+        <div class="row">
+        
+            <div class="col-md-4 col-sm-1">
+                <div class="block-user">
+                    <div class="vcard d-flex mb-3">
+                        
+                        <div class="image align-self-center">
+                            <img src="img/person_3.jpg" alt="Person here">
+                        </div>
+                        
+                        <div class="name-text align-self-center">
+                            <h2 class="heading">Martin Bzh</h2>
+                            <span class="meta">Baroudeur</span>
+                        </div>
+
+                    </div>
+                    <div class="text">
+                        <blockquote>
+                        <p>&rdquo; Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga aliquid. Atque dolore esse veritatis iusto eaque perferendis non dolorem fugiat voluptatibus vitae error ad itaque inventore accusantium tempore dolores sunt. &ldquo;</p>
+                        </blockquote>
+                    </div>
+                </div>
+            </div>
+        
+            <div class="col-md-4 col-sm-1">
+                <div class="block-user">
+                    <div class="vcard d-flex mb-3">
+                        
+                        <div class="image align-self-center">
+                            <img src="img/person_2.jpg" alt="Person here">
+                        </div>
+                        
+                        <div class="name-text align-self-center">
+                            <h2 class="heading">Sophie L</h2>
+                            <span class="meta">Baroudeur</span>
+                        </div>
+
+                    </div>
+                    <div class="text">
+                        <blockquote>
+                        <p>&rdquo; Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga aliquid. Atque dolore esse veritatis iusto eaque perferendis non dolorem fugiat voluptatibus vitae error ad itaque inventore accusantium tempore dolores sunt. &ldquo;</p>
+                        </blockquote>
+                    </div>
+                </div>
+            </div>
+        
+            <div class="col-md-4 col-sm-1">
+                <div class="block-user">
+                    <div class="vcard d-flex mb-3">
+                        
+                        <div class="image align-self-center">
+                            <img src="img/person_1.jpg" alt="Person here">
+                        </div>
+                        
+                        <div class="name-text align-self-center">
+                            <h2 class="heading">Antoine Atole</h2>
+                            <span class="meta">Baroudeur</span>
+                        </div>
+
+                    </div>
+                    <div class="text">
+                        <blockquote>
+                        <p>&rdquo; Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga aliquid. Atque dolore esse veritatis iusto eaque perferendis non dolorem fugiat voluptatibus vitae error ad itaque inventore accusantium tempore dolores sunt. &ldquo;</p>
+                        </blockquote>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
