@@ -1,9 +1,11 @@
 <div class="row site-section">
-    <div class="col-md-12">
-        <div class="row mb-5">
-            <div class="col-md-7 section-heading">
-                <span class="subheading-sm">Classe</span>
-                <h2 class="heading">Curieuse.</h2>
+    <div class="container">
+        <div class="col-md-12">
+            <div class="row mb-5">
+                <div class="col-md-7 section-heading">
+                    <span class="subheading-sm">Classe</span>
+                    <h2 class="heading">Curieuse.</h2>
+                </div>
             </div>
         </div>
     </div>
