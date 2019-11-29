@@ -1,5 +1,6 @@
 <?php
     session_start();
+    $emailOwner = $_SESSION['email'];
     if (isset($_GET['logout'])) {
         session_destroy();
         header('Location: index.php');
@@ -18,7 +19,6 @@
     include('inc/favorisAnnonce.php');
     include('inc/footer.php');
     require('inc/footer-scripts.php');
-
 
     ?>
 

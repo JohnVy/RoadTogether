@@ -15,5 +15,5 @@
     include('inc/footer.php');
     require('inc/footer-scripts.php');
 
-
+    var_dump($_SESSION);
     ?>

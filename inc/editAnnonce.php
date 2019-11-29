@@ -1,3 +1,19 @@
+<?php
+$sql = $conn->prepare("SELECT * FROM annonces WHERE email_owner = :emailOwner LIMIT 3");
+$sql->execute(array('emailOwner' => $emailOwner));
+// $row = $sql->fetch(PDO::FETCH_ASSOC);
+
+
+    // while( $row = $sql->fetch(PDO::FETCH_ASSOC) ){
+    
+    //   var_dump($row);
+    // }
+
+
+
+?>
+
+
 <div class="site-section bg-light">
     <div class="container">
 
@@ -8,83 +24,37 @@
             </div>
         </div>
 
+        <?php 
+            while( $row = $sql->fetch(PDO::FETCH_ASSOC)) {
+        ?>
+        
         <div class="col-md-12 mb-5">
             <div class="block-postb d-md-flex">
-                <div class="image" style="background-image: url('img/img_2.jpg');"></div>
+                <div class="image" style="background-image: url('img/<?php echo $row['image_url']?>');"></div>
 
                 <div class="text">
-                    <h2 class="heading">Espagne,<br> Madrid </h2>
+                    <h2 class="heading"><?php echo $row['country_article']?>,<br> <?php echo $row['city_article']?> </h2>
                     <div class="price">
-                        <span class="number">120</span>
+                        <span class="number"><?php echo $row['price_article']?></span>
                         <sup>€</sup>
                         <sub>/ pers.</sub>
                     </div>
 
                     <ul class="specs">
-                    <li><strong>Nrb de place :</strong> + 1</li>
-                    <li><strong>Départ :</strong> 23 . 01 .19</li>
-                    <li><strong>Retour :</strong> 26 . 01 .19</li>
-                    <li><strong>Transport :</strong> Bus</li>
-                    <li><strong>Trajet :</strong> Bordeaux (Fr) <strong> > </strong> Madrid (Es)</li>
-                    <li><strong>Logement :</strong> Airbnb Talence</li>
+                    <li><strong>Nrb de place :</strong> + <?php echo $row['active']?></li>
+                    <li><strong>Départ :</strong> <?php echo $row['start_date_article']?></li>
+                    <li><strong>Retour :</strong> <?php echo $row['end_date_article']?></li>
+                    <li><strong>Transport :</strong> <?php echo $row['road_article']?></li>
+                    <li><strong>Trajet :</strong> <?php echo $row['start_travel_article']?> <strong> > </strong> <?php echo $row['end_travel_article']?></li>
+                    <li><strong>Logement :</strong> <?php echo $row['location_article']?></li>
                     </ul>
 
                     <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#postmodal1">Editer</button>
                 </div>
             </div>
         </div>
+            <?php } ?>
 
-        <div class="col-md-12 mb-5">
-            <div class="block-postb d-md-flex">
-                <div class="image order-2" style="background-image: url('img/img_3.jpg');"></div>
-
-                <div class="text order-1">
-                    <h2 class="heading">Italie,<br> Reschensee </h2>
-                    <div class="price">
-                        <span class="number">70</span>
-                        <sup>€</sup>
-                        <sub>/ pers.</sub>
-                    </div>
-
-                    <ul class="specs">
-                    <li><strong>Nrb de place :</strong> + 3</li>
-                    <li><strong>Départ :</strong> 30 . 01 .19</li>
-                    <li><strong>Retour :</strong> 02 . 02 .19</li>
-                    <li><strong>Transport :</strong> Bus</li>
-                    <li><strong>Trajet :</strong> Strasbourg (Fr) <strong> > </strong> Innsbruck (Au)</li>
-                    <li><strong>Logement :</strong> Airbnb Merane</li>
-                    </ul>
-
-                    <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#postmodal1">Editer</button>
-                </div>
-            </div>
-        </div>
-
-        <div class="col-md-12 mb-5">
-            <div class="block-postb d-md-flex">
-                <div class="image" style="background-image: url('img/img_4.jpg');"></div>
-
-                <div class="text">
-                    <h2 class="heading">Pologne,<br> Varsovie </h2>
-                    <div class="price">
-                        <span class="number">525</span>
-                        <sup>€</sup>
-                        <sub>/ pers.</sub>
-                    </div>
-
-                    <ul class="specs">
-                    <li><strong>Nrb de place :</strong> + 1</li>
-                    <li><strong>Départ :</strong> 10 . 02 .19</li>
-                    <li><strong>Retour :</strong> 18 . 02 .19</li>
-                    <li><strong>Transport :</strong> Avion</li>
-                    <li><strong>Trajet :</strong> Bordeaux (Fr) <strong> > </strong> Varsovie (Pol)</li>
-                    <li><strong>Logement :</strong> Airbnb Varsovie</li>
-                    </ul>
-
-                    <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#postmodal1">Editer</button>
-                </div>
-            </div>
-        </div>
     </div>
 </div>
 
