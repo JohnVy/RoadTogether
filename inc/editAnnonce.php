@@ -1,13 +1,6 @@
 <?php
 $sql = $conn->prepare("SELECT * FROM annonces WHERE email_owner = :emailOwner LIMIT 3");
 $sql->execute(array('emailOwner' => $emailOwner));
-// $row = $sql->fetch(PDO::FETCH_ASSOC);
-
-
-    // while( $row = $sql->fetch(PDO::FETCH_ASSOC) ){
-    
-    //   var_dump($row);
-    // }
 
 
 
@@ -49,10 +42,144 @@ $sql->execute(array('emailOwner' => $emailOwner));
                     <li><strong>Logement :</strong> <?php echo $row['location_article']?></li>
                     </ul>
 
-                    <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#postmodal1">Editer</button>
+                    <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#postmodal<?php echo $row['id']?>">Editer</button>
                 </div>
             </div>
         </div>
+
+        <div class="modal fade bd-post-modal-lg" id="postmodal<?php echo $row['id']?>" tabindex="-1" role="dialog" aria-labelledby="postmodal<?php echo $row['id']?>" aria-hidden="true">
+            <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    
+                    <div class="modal-body">
+                        <div class="modal-header">
+                            <button type="button" class="btn btn-secondary btn-lg" data-dismiss="modal">Supprimer</button>
+                            <button type="button" class="btn btn-primary btn-lg">Sauvegarder</button>
+                        </div>
+                        <div class="block-postb d-md-flex">
+                            
+                            
+
+                            <div class="text">
+                                <h2 class="heading"><?php echo $row['country_article']?>,<br> <?php echo $row['city_article']?> </h2>
+                                
+                                <form action="post">
+
+                                    <div class="row">
+
+                                        <div class="col-md-6">
+                                            <label for="checkin">Du</label>
+                                            <div class="field-icon-wrap">
+                                                <div class="icon">
+                                                    <span class="far fa-calendar"></span>
+                                                </div>
+                                                <input type="text" class="form-control" placeholder="<?php echo $row['start_date_article']?>"/>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-6">
+                                            <label for="checkin">Au</label>
+                                            <div class="field-icon-wrap">
+                                                <div class="icon">
+                                                    <span class="far fa-calendar"></span>
+                                                </div>
+                                                <input type="text" class="form-control" placeholder="<?php echo $row['end_date_article']?>"/>
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <label for="checkin">Nbr</label>
+                                            <div class="field-icon-wrap">
+                                                <div class="icon">
+                                                    <span class="fas fa-angle-down"></span>
+                                                </div>
+                                                <select name="" id="" class="form-control">
+                                                    <option value="">1</option>
+                                                    <option value="">2</option>
+                                                    <option value="">3</option>
+                                                    <option value="">4</option>
+                                                    <option value="">5</option>
+                                                    <option value="">6</option>
+                                                </select>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-6">
+                                            <label for="checkin">Prix</label>
+                                            <div class="field-icon-wrap">
+                                                <div class="icon">
+                                                    <span class="fas fa-euro-sign"></span>
+                                                </div>
+                                                <input type="text" class="form-control" placeholder="<?php echo $row['price_article']?>">
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-12">
+                                            <label for="checkin">Transport</label>
+                                            <div class="field-icon-wrap">
+                                                <div class="icon">
+                                                    <span class="fas fa-angle-down"></span>
+                                                </div>
+                                                <select name="" id="" class="form-control">
+                                                    <option value="">Pédestre</option>
+                                                    <option value="">Voiture</option>
+                                                    <option value="">Autocar</option>
+                                                    <option value="">Bateau</option>
+                                                    <option value="">Avion</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-12">
+                                            <label for="checkin">Logement</label>
+                                            <div class="field-icon-wrap">
+                                                <div class="icon">
+                                                    <span class="fas fa-campground"></span>
+                                                </div>
+                                                <input type="text" class="form-control">
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-12">
+                                            <label for="checkin">Pose quelques lignes</label>
+                                            <div class="field-icon-wrap">
+                                                <div class="icon">
+                                                    <span class="far fa-comment"></span>
+                                                </div>
+                                                <textarea name="" class="form-control" id="" rows="3"></textarea>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                            
+                            </div>
+
+                            <div class="image" style="background-image: url('img/<?php echo $row['image_url']?>');"></div>
+                            
+
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+
+
             <?php } ?>
 
     </div>
@@ -60,104 +187,3 @@ $sql->execute(array('emailOwner' => $emailOwner));
 
 <!-- modal -->
 
-<div class="modal fade bd-post-modal-lg" id="postmodal1" tabindex="-1" role="dialog" aria-labelledby="postmodal1" aria-hidden="true">
-  <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
-                
-    <div class="modal-content">
-      <div class="modal-body">
-        <div class="modal-header">
-          <button type="button" class="btn btn-secondary btn-lg" data-dismiss="modal">Supprimer</button>
-          <button type="button" class="btn btn-primary btn-lg">Sauvegarder</button>
-        </div>
-        
-            <div class="block-postb d-md-flex">
-                          
-                <div class="image order-2" style="background-image: url('img/img_2.jpg'); "></div>
-                    
-                  <div class="text order-1">
-                    <h2 class="heading">Espagne,<br> Madrid </h2>
-                    
-                    <form action="#">
-                        <div class="row">
-  
-                          <div class="col-md-6">
-                            <label for="checkin">Du</label>
-                            <div class="field-icon-wrap">
-                              <div class="icon"><span class="far fa-calendar"></span></div>
-                              <input type="text" id="checkin_date" class="form-control">
-                            </div>
-                          </div>
-                          <div class="col-md-6">
-                            <label for="checkin">Au</label>
-                            <div class="field-icon-wrap">
-                              <div class="icon"><span class="far fa-calendar"></span></div>
-                              <input type="text" id="checkout_date" class="form-control">
-                            </div>
-                          </div>
-                          <div class="col-md-6">
-                            <label for="checkin">Nbr</label>
-                            <div class="field-icon-wrap">
-                              <div class="icon"><span class="fas fa-angle-down"></span></div>
-                              <select name="" id="" class="form-control">
-                                <option value="">1</option>
-                                <option value="">2</option>
-                                <option value="">3</option>
-                                <option value="">4</option>
-                                <option value="">5</option>
-                                <option value="">6</option>
-                              </select>
-                            </div>
-                          </div>
-                          <div class="col-md-6">
-                            <label for="checkin">Prix</label>
-                            <div class="field-icon-wrap">
-                              <div class="icon"><span class="fas fa-euro-sign"></span></div>
-                              <input type="text" id="checkin_price" class="form-control">
-                            </div>
-                          </div>
-                          <div class="col-md-6">
-                            <label for="checkin">Transport</label>
-                            <div class="field-icon-wrap">
-                              <div class="icon"><span class="fas fa-angle-down"></span></div>
-                              <select name="" id="" class="form-control">
-                                <option value="">Pédestre</option>
-                                <option value="">Voiture</option>
-                                <option value="">Autocar</option>
-                                <option value="">Bateau</option>
-                                <option value="">Avion</option>
-                              </select>
-                            </div>
-                          </div>
-                          <div class="col-12">
-                            <label for="checkin">Logement</label>
-                            <div class="field-icon-wrap">
-                              <div class="icon"><span class="fas fa-campground"></span></div>
-                              <input type="text" id="checkin_adress" class="form-control">
-                            </div>
-                          </div>
-                          <div class="col-12">
-                            <label for="checkin">Pose quelques lignes</label>
-                            <div class="field-icon-wrap">
-                              <div class="icon"><span class="far fa-comment"></span></div>
-                              <textarea class="form-control" id="checkin_text" rows="3"></textarea>
-                            </div>
-                          </div>
-                          <div class="col-12">
-                            <label for="checkin">Photo</label>
-                            <div class="field-icon-wrap"></div>
-                                <input type="file" class="form-control-file" id="checkin_img">
-                          </div>
-                        </div>
-                    </form>
-                    
-                  </div>
-                
-  
-                </div>
-  
-    </div>
-    
-  </div>
-  </div>
-  
-  </div>
