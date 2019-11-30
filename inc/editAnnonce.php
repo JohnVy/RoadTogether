@@ -144,7 +144,7 @@ $sql->execute(array('emailOwner' => $emailOwner));
                                                 <div class="icon">
                                                     <span class="fas fa-campground"></span>
                                                 </div>
-                                                <input type="text" class="form-control">
+                                                <input type="text" class="form-control" placeholder="<?php echo $row['location_article']?>">
                                             </div>
                                         </div>
                                     </div>
@@ -160,14 +160,30 @@ $sql->execute(array('emailOwner' => $emailOwner));
                                             </div>
                                         </div>
                                     </div>
+
+                                    <div class="row">
+                                        <div class="col-12">
+                                            <label for="checkin">Photo</label>
+                                            <div class="field-icon-wrap">
+                                                <input type="hidden" name="MAX_FILE_SIZE" value="30000"/>
+                                                <input type="file" name="userfile" class="form-control-file"/>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-12">
+                                            <div class="field-icon-wrap">
+                                                
+                                                <input type="submit" class="mt-3 form-control" value="Sauvegarder">
+                                            </div>
+                                        </div>
+                                    </div>
                                 </form>
                             
                             </div>
 
                             <div class="image" style="background-image: url('img/<?php echo $row['image_url']?>');"></div>
-                            
-
-                            
+                          
                         </div>
                     </div>
                 </div>
