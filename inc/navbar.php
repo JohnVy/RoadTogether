@@ -12,10 +12,13 @@
           if( isset($_SESSION['login']) ){
           ?>
 
-        <li class="nav-item">
+        <li class="nav-item <?php if( isset($homeLink) ){ echo("active"); } ?>">
+              <a href="home.php" class="nav-link">Home</a>
+          </li>
+        <li class="nav-item <?php if( isset($blogLink) ){ echo("active"); } ?>">
               <a href="blog.php" class="nav-link">Blog</a>
           </li>
-          <li class="nav-item active">
+          <li class="nav-item <?php if( isset($accountLink) ){ echo("active"); } ?>">
               <a href="profil.php" class="nav-link">Mon compte</a>
           </li>
 

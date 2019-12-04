@@ -9,6 +9,7 @@
       header('Location: index.php');
     }
     require('inc/connect.php');
+    $accountLink = true;
 
 
     include('inc/head.php');

@@ -5,6 +5,7 @@
         header('Location: index.php');
     }
     require('inc/connect.php');
+    $homeLink = true;
 
 
     include('inc/head.php');

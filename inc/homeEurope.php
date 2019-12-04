@@ -1,7 +1,17 @@
 <?php
-$pays = "Europe";
-$sql1 = $conn->prepare("SELECT * FROM annonces WHERE categorie_article = :pays LIMIT 6");
-$sql1->execute(array('pays' => $pays));
+// $pays = "Europe";
+// $sql1 = $conn->prepare("SELECT * FROM annonces WHERE categorie_article = :pays LIMIT 6");
+// $sql1->execute(array('pays' => $pays));
+// $rowNewsAnnonce = $sql1->fetch();
+// $sql2 = $conn->prepare("SELECT * FROM users");
+// $sql2->execute();
+// $rowUser = $sql2->fetch();
+$i = 1 ;
+// while( $i < 6 ){
+// $i++;
+// var_dump($rowUser);
+// echo ("VOILAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
+// }
 ?>
 
 
@@ -37,8 +47,15 @@ $sql1->execute(array('pays' => $pays));
                             <div class="nonloop-block-gallery owl-carousel">
 
                             <?php
-                            while( $rowNewsAnnonce = $sql1->fetch(PDO::FETCH_ASSOC) ) {
-                                var_dump($rowNewsAnnonce);
+                            $newsAnnonces = $conn->query("SELECT * FROM annonces WHERE categorie_article = 'Europe' LIMIT 6");
+                            
+                            while( $rowNewsAnnonce = $newsAnnonces->fetch() ) {
+
+                                $rowUser = array(
+                                    'pseudo_user' => "Toto",
+                                    'classe_user' => "Barroudeur",
+                                    'avatar_user' => "person_1.jpg"
+                                );
                             ?>
 
                                 <div class="item">
@@ -46,10 +63,10 @@ $sql1->execute(array('pays' => $pays));
                                         <div class="col-12">
                                             <div class="block-user">
                                                 <div class="vcard d-flex">
-                                                    <div class="image align-self-center"><img src="img/<?php echo $rowUser['avatar_user'] ?>" alt="avatar de <?php echo $rowUser['pseudo_user']?>"></div>
+                                                    <div class="image align-self-center"><img src="img/<?php echo $rowUser['avatar_user']; ?>" alt="avatar de <?php echo $rowUser['pseudo_user']; ?>"></div>
                                                     <div class="name-text align-self-center">
-                                                        <h2 class="heading"><?php echo $rowUser['pseudo_user']?></h2>
-                                                        <span class="meta"><?php echo $rowUser['classe_user']?></span>
+                                                        <h2 class="heading"><?php echo $rowUser['pseudo_user']; ?></h2>
+                                                        <span class="meta"><?php echo $rowUser['classe_user']; ?></span>
                                                     </div>
                                                 </div>
                                             </div>
@@ -61,20 +78,21 @@ $sql1->execute(array('pays' => $pays));
                                             </div>
 
                                             <div class="image">
-                                                <a href=""><img src="img/menu_1.jpg" alt="Image placeholder"></a>
+                                                <a href=""><img src="img/<?php echo $rowNewsAnnonce['image_url']; ?>" alt="Image placeholder"></a>
                                             </div>
 
                                             <div class="text">
-                                                <h2 class="heading"><?php echo $rowNewsAnnonce['country_article']?>, <?php echo $rowNewsAnnonce['city_article']?></h2>
-                                                <p><?php echo $rowNewsAnnonce['text_article']?></p>
+                                                <h2 class="heading"><?php echo $rowNewsAnnonce['country_article']; ?>, <?php echo $rowNewsAnnonce['city_article']; ?></h2>
+                                                <p><?php echo $rowNewsAnnonce['text_article']; ?></p>
                                                 <ul class="specs">
-                                                    <li><strong>Nbr de place :</strong> + <?php echo $rowNewsAnnonce['active']?></li>
-                                                    <li><strong>Départ :</strong> <?php echo $roNewswAnnonce['start_date_article']?></li>
-                                                    <li><strong>Retour :</strong> <?php echo $rowNewsAnnonce['end_date_article']?></li>
+                                                    <li><strong>Secteur :</strong> <?php echo $rowNewsAnnonce['categorie_article']; ?></li>
+                                                    <li><strong>Nbr de place :</strong> + <?php echo $rowNewsAnnonce['active']; ?></li>
+                                                    <li><strong>Départ :</strong> <?php echo $rowNewsAnnonce['start_date_article']; ?></li>
+                                                    <li><strong>Retour :</strong> <?php echo $rowNewsAnnonce['end_date_article']; ?></li>
                                                 </ul>
 
                                                 <div class="price">
-                                                    <span class="number"><?php echo $rowNewsAnnonce['price_article']?></span>
+                                                    <span class="number"><?php echo $rowNewsAnnonce['price_article']; ?></span>
                                                     <sup>€</sup>
                                                     <sub>/ pers</sub>
                                                 </div>
@@ -90,13 +108,22 @@ $sql1->execute(array('pays' => $pays));
                     </div>
                 </div>
 
-                <div class="tab-pane fade show active" id="#pills-select" role="tabpanel" aria-labelledby="pills-select">
+                <div class="tab-pane fade" id="#pills-select" role="tabpanel" aria-labelledby="pills-select">
                     <div class="row">
                         <div class="col-md-12 block-gallery">
                             <div class="nonloop-block-gallery owl-carousel">
 
                             <?php
-                            while( $rowSelectAnnonce = $sql2->fetch(PDO::FETCH_ASSOC) ) {
+                            $selectAnnonces = $conn->query("SELECT * FROM annonces WHERE categorie_article = 'Europe' LIMIT 6");
+
+
+                            while( $rowSelectAnnonce = $selectAnnonces->fetch() ) {
+
+                                $rowUser = array(
+                                    'pseudo_user' => "Toto",
+                                    'classe_user' => "Barroudeur",
+                                    'avatar_user' => "person_1.jpg"
+                                );
                             ?>
 
                                 <div class="item">
@@ -119,7 +146,7 @@ $sql1->execute(array('pays' => $pays));
                                             </div>
 
                                             <div class="image">
-                                                <a href=""><img src="img/menu_1.jpg" alt="Image placeholder"></a>
+                                                <a href=""><img src="img/<?php echo $rowSelectAnnonce['image_url']; ?>" alt="Image placeholder"></a>
                                             </div>
 
                                             <div class="text">
@@ -148,13 +175,21 @@ $sql1->execute(array('pays' => $pays));
                     </div>
                 </div>
 
-                <div class="tab-pane fade show active" id="#pills-pop" role="tabpanel" aria-labelledby="pills-pop">
+                <div class="tab-pane fade" id="#pills-pop" role="tabpanel" aria-labelledby="pills-pop">
                     <div class="row">
                         <div class="col-md-12 block-gallery">
                             <div class="nonloop-block-gallery owl-carousel">
 
                             <?php
-                            while( $rowPopAnnonce = $sql3->fetch(PDO::FETCH_ASSOC) ) {
+                            $popAnnonces = $conn->query("SELECT * FROM annonces WHERE categorie_article = 'Europe' LIMIT 6");
+
+                            while( $rowPopAnnonce = $popAnnonces->fetch() ) {
+
+                                $rowUser = array(
+                                    'pseudo_user' => "Toto",
+                                    'classe_user' => "Barroudeur",
+                                    'avatar_user' => "person_1.jpg"
+                                );
                             ?>
 
                                 <div class="item">
@@ -177,7 +212,7 @@ $sql1->execute(array('pays' => $pays));
                                             </div>
 
                                             <div class="image">
-                                                <a href=""><img src="img/menu_1.jpg" alt="Image placeholder"></a>
+                                                <a href=""><img src="img/<?php echo $rowPopAnnonce['image_url']; ?>" alt="Image placeholder"></a>
                                             </div>
 
                                             <div class="text">
