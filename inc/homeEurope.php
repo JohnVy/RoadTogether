@@ -1,20 +1,3 @@
-<?php
-// $pays = "Europe";
-// $sql1 = $conn->prepare("SELECT * FROM annonces WHERE categorie_article = :pays LIMIT 6");
-// $sql1->execute(array('pays' => $pays));
-// $rowNewsAnnonce = $sql1->fetch();
-// $sql2 = $conn->prepare("SELECT * FROM users");
-// $sql2->execute();
-// $rowUser = $sql2->fetch();
-$i = 1 ;
-// while( $i < 6 ){
-// $i++;
-// var_dump($rowUser);
-// echo ("VOILAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
-// }
-?>
-
-
 
 <div class="site-section bg-light">
     <div class="container">
@@ -29,25 +12,25 @@ $i = 1 ;
         <div class="block-section">
             <ul class="nav" id="pills-tab" role="tablist">
                 <li class="nav-item">
-                    <a href="#pills-news" class="nav-link active" data-toggle="pill" role="tab" aria-control="pills-news" aria-selected="true">Les nouveautés</a>
+                    <a href="#pills-news" id="pills-news-tab" class="nav-link active" data-toggle="pill" role="tab" aria-control="pills-news" aria-selected="true">Les nouveautés</a>
                 </li>
                 <li class="nav-item">
-                    <a href="#pills-select" class="nav-link" data-toggle="pill" role="tab" aria-control="pills-select" aria-selected="false">Notre sélections</a>
+                    <a href="#pills-select" id="pills-select-tab" class="nav-link" data-toggle="pill" role="tab" aria-control="pills-select" aria-selected="false">Notre sélections</a>
                 </li>
                 <li class="nav-item">
-                    <a href="#pills-pop" class="nav-link" data-toggle="pill" role="tab" aria-control="pills-pop" aria-selected="false">Les populaires</a>
+                    <a href="#pills-pop" id="pills-pop-tab" class="nav-link" data-toggle="pill" role="tab" aria-control="pills-pop" aria-selected="false">Les populaires</a>
                 </li>
             </ul>
 
             <div class="tab-content">
                 
-                <div class="tab-pane fade show active" id="#pills-news" role="tabpanel" aria-labelledby="pills-news">
+                <div class="tab-pane fade show active" id="pills-news" role="tabpanel" aria-labelledby="pills-news-tab">
                     <div class="row">
                         <div class="col-md-12 block-gallery">
                             <div class="nonloop-block-gallery owl-carousel">
 
                             <?php
-                            $newsAnnonces = $conn->query("SELECT * FROM annonces WHERE categorie_article = 'Europe' LIMIT 6");
+                            $newsAnnonces = $conn->query("SELECT * FROM annonces WHERE categorie_article = 'Europe' ORDER BY annonces . publish_date_article DESC LIMIT 6");
                             
                             while( $rowNewsAnnonce = $newsAnnonces->fetch() ) {
 
@@ -108,13 +91,13 @@ $i = 1 ;
                     </div>
                 </div>
 
-                <div class="tab-pane fade" id="#pills-select" role="tabpanel" aria-labelledby="pills-select">
+                <div class="tab-pane fade" id="pills-select" role="tabpanel" aria-labelledby="pills-select-tab">
                     <div class="row">
                         <div class="col-md-12 block-gallery">
                             <div class="nonloop-block-gallery owl-carousel">
 
                             <?php
-                            $selectAnnonces = $conn->query("SELECT * FROM annonces WHERE categorie_article = 'Europe' LIMIT 6");
+                            $selectAnnonces = $conn->query("SELECT * FROM annonces WHERE categorie_article = 'Europe' ORDER BY annonces . price_article ASC LIMIT 6");
 
 
                             while( $rowSelectAnnonce = $selectAnnonces->fetch() ) {
@@ -175,13 +158,13 @@ $i = 1 ;
                     </div>
                 </div>
 
-                <div class="tab-pane fade" id="#pills-pop" role="tabpanel" aria-labelledby="pills-pop">
+                <div class="tab-pane fade" id="pills-pop" role="tabpanel" aria-labelledby="pills-pop-tab">
                     <div class="row">
                         <div class="col-md-12 block-gallery">
                             <div class="nonloop-block-gallery owl-carousel">
 
                             <?php
-                            $popAnnonces = $conn->query("SELECT * FROM annonces WHERE categorie_article = 'Europe' LIMIT 6");
+                            $popAnnonces = $conn->query("SELECT * FROM annonces WHERE categorie_article = 'Europe' ORDER BY annonces . available_article DESC LIMIT 6");
 
                             while( $rowPopAnnonce = $popAnnonces->fetch() ) {
 
